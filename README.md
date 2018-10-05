@@ -1,3 +1,12 @@
+# Installation
+
+install node 8.12.0 <br/>
+check node --version dans un terminal<br/>
+check npm --version dans un terminal<br/>
+npm install -g @angular/cli dans un terminal<br/>
+check ng --version dans un terminal<br/>
+
+
 # SmartHomeClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
