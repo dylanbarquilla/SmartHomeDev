@@ -12,9 +12,20 @@ import { PageStatistiquesComponent } from './page-statistiques/page-statistiques
 import { PageAccueilComponent } from './page-accueil/page-accueil.component';
 import {FormsModule} from '@angular/forms';
 import { PageAuthentificationComponent } from './page-authentification/page-authentification.component';
+import { LampeComponent } from './lampe/lampe.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
-  { path: 'statistiques', component: PageStatistiquesComponent},
+  {
+    path: 'statistiques',
+    component: PageStatistiquesComponent,
+    data: { title : 'Statistiques' }
+  },
+  {
+    path: 'lampe',
+    component: LampeComponent,
+    data: { title : 'Lampes' }
+  },
   { path: 'auth', component: PageAuthentificationComponent},
   { path: '', component: PageAccueilComponent}
 ];
@@ -26,7 +37,8 @@ const appRoutes: Routes = [
     HomeComponent,
     PageStatistiquesComponent,
     PageAccueilComponent,
-    PageAuthentificationComponent
+    PageAuthentificationComponent,
+    LampeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +46,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
