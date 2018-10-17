@@ -1,31 +1,17 @@
 <app-toolbar-menu></app-toolbar-menu>
-<div class="container">
+<div class="container" *ngFor="let p of lampes; let i=index;">
 
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Lampe 1</mat-card-title>
+      <mat-card-title>{{p.name}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-slider thumbLabel tickInterval="1"></mat-slider>
+      <mat-slider
+        thumbLabel
+        tickInterval="1"
+        value={{p.brightness}}
+        (change)="sliderChange($event, p)">
+      </mat-slider>
     </mat-card-content>
   </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Lampe 2</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-slider thumbLabel tickInterval="1"></mat-slider>
-    </mat-card-content>
-  </mat-card>
-</div>
-
-
-<div>
-  <ul class="lampes">
-    <li *ngFor="let p of lampes; let i=index;">
-      <a>
-        <span class="badge">{{i+1}}</span> {{p.name}}
-      </a>
-    </li>
-  </ul>
 </div>

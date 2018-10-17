@@ -3,27 +3,33 @@
   <mat-grid-tile></mat-grid-tile>
   <mat-grid-tile></mat-grid-tile>
   <mat-grid-tile></mat-grid-tile>
-  <mat-grid-tile>
-    <mat-card class="card-auth">
-      <mat-card-header>
-        <div><mat-icon>vpn_key</mat-icon></div>
-        <mat-card-title>Authentification</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <form class="authentification-form">
-          <mat-form-field class="authentification-full-width">
-            <input matInput placeholder="Utilisateur" value="">
-          </mat-form-field>
+  <mat-grid-tile></mat-grid-tile>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Utilisateur" [(ngModel)]="username" name="username" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td><mat-form-field class="example-full-width">
+              <input matInput placeholder="Mot de passe" [(ngModel)]="password"type="password" name="password" required [type]="hide ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            </mat-form-field></td>
+          </tr></table>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="login()" color="primary">Login</button>
+    </mat-card-actions>
+  </mat-card>
 
-          <mat-form-field class="authentification-full-width">
-            <input matInput placeholder="Mot de passe" [type]="hide ? 'password' : 'text'">
-            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-          </mat-form-field>
-        </form>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary">Se connecter</button>
-      </mat-card-actions>
-    </mat-card>
-  </mat-grid-tile>
 </mat-grid-list>
+

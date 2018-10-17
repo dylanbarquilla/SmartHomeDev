@@ -10,7 +10,7 @@ export class RestService {
   private endpoint: string;
 
   constructor(private http: HttpClient) {
-    const endpoint = 'http://localhost:8080/';
+    this.endpoint = 'http://localhost:8080/';
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
@@ -40,5 +40,10 @@ export class RestService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
+  }
+
+  setLight(id, value: number | null) {
+    return this.http.get(this.endpoint + 'LightService/setLigth/' + id + '/' + value).pipe(
+      map(this.extractData));
   }
 }
