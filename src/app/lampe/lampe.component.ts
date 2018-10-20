@@ -26,10 +26,6 @@ export class LampeComponent implements OnInit {
   }
 
   sliderChange($event: MatSliderChange, p: any) {
-    console.log($event.value);
-    console.log(p.id);
-    this.rest.setLight(p.id, $event.value).subscribe((data: {}) => {
-
-    });
+    this.rest.setLight(p, $event.value);
   }
 }
