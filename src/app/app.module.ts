@@ -14,6 +14,8 @@ import {FormsModule} from '@angular/forms';
 import { PageAuthentificationComponent } from './page-authentification/page-authentification.component';
 import { LampeComponent } from './lampe/lampe.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ColorPickerModule } from 'ngx-color-picker';
+
 
 const appRoutes: Routes = [
   {
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     MaterialModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ColorPickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

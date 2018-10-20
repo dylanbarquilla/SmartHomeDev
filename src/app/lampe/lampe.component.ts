@@ -21,7 +21,7 @@ import { Lamp } from '../model/lamp';
 
 export class LampeComponent implements OnInit {
 
-  public color1: string = '#2889e9';
+  public color1 = '#2889e9';
   lampes: Lamp[] = [];
 
   constructor(public rest: RestService, private route: ActivatedRoute, private router: Router) { }
@@ -31,9 +31,9 @@ export class LampeComponent implements OnInit {
   }
 
   getLampes() {
-    const light1 = new Lamp({id: 12, name: "Test 1", piece: "Cuisine"});
-    const light2 = new Lamp({id: 13, name: "Test 2", piece: "Salon", intensity: 50});
-    const light3 = new Lamp({id: 13, name: "Test 3", piece: "Cuisine", intensity: 10});
+    const light1 = new Lamp({id: 12, name: 'Test 1', piece: 'Cuisine'});
+    const light2 = new Lamp({id: 13, name: 'Test 2', piece: 'Salon', intensity: 50});
+    const light3 = new Lamp({id: 13, name: 'Test 3', piece: 'Cuisine', intensity: 10});
 
     this.lampes.push(light1, light2, light3);
 
@@ -58,7 +58,7 @@ export class LampeComponent implements OnInit {
 
 
     this.rest.setLight(p.id, $event.value).subscribe((data: {}) => {
-      //TODO : setter for the light
+      // TODO : setter for the light
     });
   }
 }
