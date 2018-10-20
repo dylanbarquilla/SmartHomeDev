@@ -4,14 +4,16 @@
   <mat-card>
     <mat-card-header>
       <mat-card-title>{{p.name}}</mat-card-title>
+      <mat-card-subtitle>{{p.piece}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <mat-slider
         thumbLabel
         tickInterval="1"
-        value={{p.brightness}}
+        value={{p.intensity}}
         (change)="sliderChange($event, p)">
       </mat-slider>
+
     </mat-card-content>
   </mat-card>
 </div>

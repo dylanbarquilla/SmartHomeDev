@@ -24,11 +24,6 @@ export class RestService {
     return body || { };
   }
 
-  getLigths(): Observable<any> {
-    return this.http.get(this.endpoint + 'LightService/getAllLights').pipe(
-      map(this.extractData));
-  }
-
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
@@ -43,17 +38,15 @@ export class RestService {
     };
   }
 
-  setLight(p, value: number | null) {
-    let data = p;
-    data.brightness = value;
 
-    return this.http.post(this.endpoint + 'LightService/setLigth', data).subscribe(
-      () => {
-        console.log('ça marche');
-      },
-      (error) => {
-        console.log('Erreur : ' + error);
-      }
-    );
+  /** LIGHT COMPONENT */
+  getLigths(): Observable<any> {
+    return this.http.get(this.endpoint + 'LightService/getAllLights').pipe(
+      map(this.extractData));
+  }
+
+  setLight(id, value: number | null) {
+    return this.http.get(this.endpoint + 'LightService/setLigth/' + id + '/' + value).pipe(
+      map(this.extractData));
   }
 }
