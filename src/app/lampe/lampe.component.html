@@ -13,7 +13,7 @@
         value={{p.intensity}}
         (change)="sliderChange($event, p)">
       </mat-slider>
-      <input type="color" [(colorPicker)]="color1" name="color1">
+      <button mat-raised-button [style.background]="color" [(colorPicker)]="color"><mat-icon>colorize</mat-icon></button>
 
     </mat-card-content>
   </mat-card>

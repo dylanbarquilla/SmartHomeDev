@@ -21,7 +21,7 @@ import { Lamp } from '../model/lamp';
 
 export class LampeComponent implements OnInit {
 
-  public color1 = '#2889e9';
+  public color = '#2889e9';
   lampes: Lamp[] = [];
 
   constructor(public rest: RestService, private route: ActivatedRoute, private router: Router) { }
