@@ -28,8 +28,19 @@ const appRoutes: Routes = [
     component: LampeComponent,
     data: { title : 'Lampes' }
   },
-  { path: 'auth', component: PageAuthentificationComponent},
-  { path: '', component: PageAccueilComponent}
+  {
+    path: 'auth',
+    component: PageAuthentificationComponent
+  },
+  {
+    path: '',
+    redirectTo: '/accueil',
+    pathMatch: 'full'
+  },
+  {
+    path: 'accueil',
+    component: PageAccueilComponent
+  }
 ];
 
 @NgModule({

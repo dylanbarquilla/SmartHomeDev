@@ -1,10 +1,10 @@
-import { DomoticObject } from "./domotic-object";
+import { DomoticObject } from './domotic-object';
 
 /**
  * This class represents a Lamp object
  * Extends: DomoticObject class
  */
-export class Lamp extends DomoticObject{
+export class Lamp extends DomoticObject {
     /**
      * Percent of light
      * 0 : light off
@@ -16,7 +16,7 @@ export class Lamp extends DomoticObject{
      * Red Green Blue color
      * 3 numbers between 0 and 255
      */
-    public color?: Number[];       //Represents the color of the light : RGB
+    public color?: String;       // Represents the color of the light : RGB
 
 
     /** CONSTRUCTORS */
@@ -26,11 +26,10 @@ export class Lamp extends DomoticObject{
 
         let {
             id = 1,
-            name = "",
-            piece = "",
-
+            name = '',
+            piece = '',
             intensity = 0,
-            color = [255, 255, 255],
+            color = '#ffffff',
         } = obj;
 
         this.id = id;
@@ -39,20 +38,5 @@ export class Lamp extends DomoticObject{
 
         this.intensity = intensity;
         this.color = color;
-
-        if (this.color.length != 3)
-            this.color = [255, 255, 255];
-        
-        if (this.color[0] < 0 || this.color[0] > 255)
-            this.color = [255, 255, 255];
-        
-        if (this.color[1] < 0 || this.color[1] > 255)
-            this.color = [255, 255, 255];
-
-        if (this.color[2] < 0 || this.color[2] > 255)
-            this.color = [255, 255, 255];
     }
-
-    
-
 }

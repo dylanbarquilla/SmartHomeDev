@@ -8,7 +8,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import {MatSliderModule} from '@angular/material/slider';
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSliderModule],
+    MatSliderModule,
+    MatExpansionModule],
   exports: [
     MatButtonModule,
     MatCheckboxModule,
@@ -33,6 +34,7 @@ import {MatSliderModule} from '@angular/material/slider';
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSliderModule],
+    MatSliderModule,
+    MatExpansionModule],
 })
 export class MaterialModule { }

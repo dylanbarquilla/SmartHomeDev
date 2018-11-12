@@ -1,20 +1,45 @@
 <app-toolbar-menu></app-toolbar-menu>
-<div class="container" *ngFor="let p of lampes; let i=index;">
 
+
+<div class="container">
   <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{p.name}}</mat-card-title>
-      <mat-card-subtitle>{{p.piece}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-slider
-        thumbLabel
-        tickInterval="1"
-        value={{p.intensity}}
-        (change)="sliderChange($event, p)">
-      </mat-slider>
-      <button mat-raised-button [style.background]="color" [(colorPicker)]="color"><mat-icon>colorize</mat-icon></button>
+    <mat-accordion class="matAccordionLight">
 
-    </mat-card-content>
+      <mat-expansion-panel *ngFor="let p of lampes; let i=index;">
+
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div>
+              <mat-checkbox class="checkboxLight" [(ngModel)]="checkedList[i]"></mat-checkbox>
+              <mat-form-field>
+                <input matInput [(ngModel)]="p.name" [value]="p.name">
+              </mat-form-field>
+            </div>
+
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-form-field>
+              <input matInput [(ngModel)]="p.piece" [value]="p.piece">
+            </mat-form-field>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-slider
+          thumbLabel
+          tickInterval="1"
+          [(ngModel)]="p.intensity"
+          value={{p.intensity}}>
+        </mat-slider>
+
+        <button mat-raised-button [style.background]="p.color" [cpOutputFormat]='hex' [cpAlphaChannel]='disable' [(colorPicker)]="p.color">
+          <mat-icon>colorize</mat-icon>
+        </button>
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+    <mat-checkbox (change)="changeCheckboxAll()" [(ngModel)]="checkboxAll" class="checkboxAll">Tous</mat-checkbox>
   </mat-card>
 </div>
+
+
